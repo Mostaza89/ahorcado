@@ -31,5 +31,26 @@ namespace ahorcado
         {
 
         }
+
+        private void lb1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bnpalabra_Click(object sender, EventArgs e)
+        {
+            string palabraParaAdivinar=tb1.Text;
+            
+            if (string.IsNullOrWhiteSpace(palabraParaAdivinar))
+            {
+                MessageBox.Show("Por favor, introduce una palabra");
+                return;
+            }
+            
+            Formahorcado formahorcado = new Formahorcado();
+            formahorcado.Show();
+            this.Hide();
+
+        }
     }
 }

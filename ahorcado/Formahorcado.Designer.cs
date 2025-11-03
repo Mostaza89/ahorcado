@@ -28,20 +28,83 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.lblPalabra = new System.Windows.Forms.Label();
+            this.lblErrores = new System.Windows.Forms.Label();
+            this.lblIntentos = new System.Windows.Forms.Label();
+            this.pbAhorcado = new System.Windows.Forms.PictureBox();
+            this.flpBotones = new System.Windows.Forms.FlowLayoutPanel();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAhorcado)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lblPalabra
+            // 
+            this.lblPalabra.AutoSize = true;
+            this.lblPalabra.Location = new System.Drawing.Point(251, 166);
+            this.lblPalabra.Name = "lblPalabra";
+            this.lblPalabra.Size = new System.Drawing.Size(44, 16);
+            this.lblPalabra.TabIndex = 0;
+            this.lblPalabra.Text = "label1";
+            // 
+            // lblErrores
+            // 
+            this.lblErrores.AutoSize = true;
+            this.lblErrores.Location = new System.Drawing.Point(254, 208);
+            this.lblErrores.Name = "lblErrores";
+            this.lblErrores.Size = new System.Drawing.Size(44, 16);
+            this.lblErrores.TabIndex = 1;
+            this.lblErrores.Text = "label1";
+            // 
+            // lblIntentos
+            // 
+            this.lblIntentos.AutoSize = true;
+            this.lblIntentos.Location = new System.Drawing.Point(254, 249);
+            this.lblIntentos.Name = "lblIntentos";
+            this.lblIntentos.Size = new System.Drawing.Size(44, 16);
+            this.lblIntentos.TabIndex = 2;
+            this.lblIntentos.Text = "label2";
+            // 
+            // pbAhorcado
+            // 
+            this.pbAhorcado.Location = new System.Drawing.Point(305, 61);
+            this.pbAhorcado.Name = "pbAhorcado";
+            this.pbAhorcado.Size = new System.Drawing.Size(100, 50);
+            this.pbAhorcado.TabIndex = 3;
+            this.pbAhorcado.TabStop = false;
+            // 
+            // flpBotones
+            // 
+            this.flpBotones.Location = new System.Drawing.Point(291, 326);
+            this.flpBotones.Name = "flpBotones";
+            this.flpBotones.Size = new System.Drawing.Size(200, 100);
+            this.flpBotones.TabIndex = 4;
             // 
             // Formahorcado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ahorcado.Properties.Resources._3b56ea8467e63d102d24420119178c23;
-            this.ClientSize = new System.Drawing.Size(621, 466);
+            this.ClientSize = new System.Drawing.Size(632, 472);
+            this.Controls.Add(this.flpBotones);
+            this.Controls.Add(this.pbAhorcado);
+            this.Controls.Add(this.lblIntentos);
+            this.Controls.Add(this.lblErrores);
+            this.Controls.Add(this.lblPalabra);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Formahorcado";
             this.Text = "Formahorcado";
+            this.Load += new System.EventHandler(this.Formahorcado_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbAhorcado)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblPalabra;
+        private System.Windows.Forms.Label lblErrores;
+        private System.Windows.Forms.Label lblIntentos;
+        private System.Windows.Forms.PictureBox pbAhorcado;
+        private System.Windows.Forms.FlowLayoutPanel flpBotones;
     }
 }

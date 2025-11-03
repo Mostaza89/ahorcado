@@ -39,9 +39,10 @@
             // 
             this.lbtitulo.AutoSize = true;
             this.lbtitulo.Font = new System.Drawing.Font("Blackadder ITC", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbtitulo.Location = new System.Drawing.Point(210, 9);
+            this.lbtitulo.Location = new System.Drawing.Point(280, 11);
+            this.lbtitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbtitulo.Name = "lbtitulo";
-            this.lbtitulo.Size = new System.Drawing.Size(368, 123);
+            this.lbtitulo.Size = new System.Drawing.Size(459, 154);
             this.lbtitulo.TabIndex = 1;
             this.lbtitulo.Text = "Ahorcado";
             // 
@@ -49,9 +50,10 @@
             // 
             this.lbpalabra.AutoSize = true;
             this.lbpalabra.Font = new System.Drawing.Font("Blackadder ITC", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbpalabra.Location = new System.Drawing.Point(619, 44);
+            this.lbpalabra.Location = new System.Drawing.Point(825, 54);
+            this.lbpalabra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbpalabra.Name = "lbpalabra";
-            this.lbpalabra.Size = new System.Drawing.Size(117, 48);
+            this.lbpalabra.Size = new System.Drawing.Size(150, 60);
             this.lbpalabra.TabIndex = 2;
             this.lbpalabra.Text = "Palabra";
             this.lbpalabra.Click += new System.EventHandler(this.lbpalabra_Click);
@@ -59,9 +61,10 @@
             // bniniciar
             // 
             this.bniniciar.Font = new System.Drawing.Font("Blackadder ITC", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bniniciar.Location = new System.Drawing.Point(319, 169);
+            this.bniniciar.Location = new System.Drawing.Point(425, 208);
+            this.bniniciar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bniniciar.Name = "bniniciar";
-            this.bniniciar.Size = new System.Drawing.Size(145, 52);
+            this.bniniciar.Size = new System.Drawing.Size(193, 64);
             this.bniniciar.TabIndex = 3;
             this.bniniciar.Text = "Iniciar";
             this.bniniciar.UseVisualStyleBackColor = true;
@@ -70,9 +73,10 @@
             // bnopciones
             // 
             this.bnopciones.Font = new System.Drawing.Font("Blackadder ITC", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnopciones.Location = new System.Drawing.Point(319, 248);
+            this.bnopciones.Location = new System.Drawing.Point(425, 305);
+            this.bnopciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bnopciones.Name = "bnopciones";
-            this.bnopciones.Size = new System.Drawing.Size(145, 52);
+            this.bnopciones.Size = new System.Drawing.Size(193, 64);
             this.bnopciones.TabIndex = 4;
             this.bnopciones.Text = "Opciones";
             this.bnopciones.UseVisualStyleBackColor = true;
@@ -81,9 +85,10 @@
             // bnsalir
             // 
             this.bnsalir.Font = new System.Drawing.Font("Blackadder ITC", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnsalir.Location = new System.Drawing.Point(319, 333);
+            this.bnsalir.Location = new System.Drawing.Point(425, 410);
+            this.bnsalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bnsalir.Name = "bnsalir";
-            this.bnsalir.Size = new System.Drawing.Size(145, 52);
+            this.bnsalir.Size = new System.Drawing.Size(193, 64);
             this.bnsalir.TabIndex = 6;
             this.bnsalir.Text = "Salir";
             this.bnsalir.UseVisualStyleBackColor = true;
@@ -91,17 +96,19 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ahorcado.Properties.Resources.cf93d1d7cfae0b2a30e5eb1739bfc64e;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.bnsalir);
             this.Controls.Add(this.bnopciones);
             this.Controls.Add(this.bniniciar);
             this.Controls.Add(this.lbpalabra);
             this.Controls.Add(this.lbtitulo);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

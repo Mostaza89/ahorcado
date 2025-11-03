@@ -64,6 +64,7 @@
     <Compile Include="Forminiciojuego.Designer.cs">
       <DependentUpon>Forminiciojuego.cs</DependentUpon>
     </Compile>
+    <Compile Include="modulologico\JuegoAhorcado.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
