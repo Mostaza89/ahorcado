@@ -39,7 +39,7 @@
             // lblPalabra
             // 
             this.lblPalabra.AutoSize = true;
-            this.lblPalabra.Location = new System.Drawing.Point(251, 166);
+            this.lblPalabra.Location = new System.Drawing.Point(254, 158);
             this.lblPalabra.Name = "lblPalabra";
             this.lblPalabra.Size = new System.Drawing.Size(44, 16);
             this.lblPalabra.TabIndex = 0;
@@ -48,7 +48,7 @@
             // lblErrores
             // 
             this.lblErrores.AutoSize = true;
-            this.lblErrores.Location = new System.Drawing.Point(254, 208);
+            this.lblErrores.Location = new System.Drawing.Point(254, 193);
             this.lblErrores.Name = "lblErrores";
             this.lblErrores.Size = new System.Drawing.Size(44, 16);
             this.lblErrores.TabIndex = 1;
@@ -57,7 +57,7 @@
             // lblIntentos
             // 
             this.lblIntentos.AutoSize = true;
-            this.lblIntentos.Location = new System.Drawing.Point(254, 249);
+            this.lblIntentos.Location = new System.Drawing.Point(254, 235);
             this.lblIntentos.Name = "lblIntentos";
             this.lblIntentos.Size = new System.Drawing.Size(44, 16);
             this.lblIntentos.TabIndex = 2;
@@ -65,7 +65,7 @@
             // 
             // pbAhorcado
             // 
-            this.pbAhorcado.Location = new System.Drawing.Point(305, 61);
+            this.pbAhorcado.Location = new System.Drawing.Point(257, 12);
             this.pbAhorcado.Name = "pbAhorcado";
             this.pbAhorcado.Size = new System.Drawing.Size(100, 50);
             this.pbAhorcado.TabIndex = 3;
@@ -73,9 +73,9 @@
             // 
             // flpBotones
             // 
-            this.flpBotones.Location = new System.Drawing.Point(291, 326);
+            this.flpBotones.Location = new System.Drawing.Point(12, 266);
             this.flpBotones.Name = "flpBotones";
-            this.flpBotones.Size = new System.Drawing.Size(200, 100);
+            this.flpBotones.Size = new System.Drawing.Size(608, 194);
             this.flpBotones.TabIndex = 4;
             // 
             // Formahorcado

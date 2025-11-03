@@ -39,18 +39,21 @@ namespace ahorcado
 
         private void bnpalabra_Click(object sender, EventArgs e)
         {
-            string palabraParaAdivinar=tb1.Text;
-            
+            string palabraParaAdivinar = tb1.Text;
+
+            // Tu validación está perfecta
             if (string.IsNullOrWhiteSpace(palabraParaAdivinar))
             {
                 MessageBox.Show("Por favor, introduce una palabra");
                 return;
             }
-            
-            Formahorcado formahorcado = new Formahorcado();
+
+            // ----- AQUÍ ESTÁ LA CORRECCIÓN -----
+            // Pásale la variable "palabraParaAdivinar" al constructor
+            Formahorcado formahorcado = new Formahorcado(palabraParaAdivinar);
+
             formahorcado.Show();
             this.Hide();
-
         }
     }
 }
