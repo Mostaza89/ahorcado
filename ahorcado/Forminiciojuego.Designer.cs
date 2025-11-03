@@ -38,10 +38,9 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.Location = new System.Drawing.Point(-1, 384);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 312);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(985, 130);
+            this.pictureBox1.Size = new System.Drawing.Size(739, 106);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
@@ -49,10 +48,9 @@
             // 
             this.lb1.AutoSize = true;
             this.lb1.Font = new System.Drawing.Font("Blackadder ITC", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb1.Location = new System.Drawing.Point(16, 405);
-            this.lb1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb1.Location = new System.Drawing.Point(12, 329);
             this.lb1.Name = "lb1";
-            this.lb1.Size = new System.Drawing.Size(286, 44);
+            this.lb1.Size = new System.Drawing.Size(229, 34);
             this.lb1.TabIndex = 5;
             this.lb1.Text = "Introduce una palabra...";
             this.lb1.Click += new System.EventHandler(this.lb1_Click);
@@ -60,20 +58,18 @@
             // tb1
             // 
             this.tb1.Font = new System.Drawing.Font("Blackadder ITC", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb1.Location = new System.Drawing.Point(16, 450);
-            this.tb1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb1.Location = new System.Drawing.Point(12, 366);
             this.tb1.Name = "tb1";
-            this.tb1.Size = new System.Drawing.Size(205, 51);
+            this.tb1.Size = new System.Drawing.Size(155, 42);
             this.tb1.TabIndex = 6;
             this.tb1.TextChanged += new System.EventHandler(this.tb1_TextChanged);
             // 
             // bnpalabra
             // 
             this.bnpalabra.Font = new System.Drawing.Font("Blackadder ITC", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnpalabra.Location = new System.Drawing.Point(565, 453);
-            this.bnpalabra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bnpalabra.Location = new System.Drawing.Point(611, 366);
             this.bnpalabra.Name = "bnpalabra";
-            this.bnpalabra.Size = new System.Drawing.Size(151, 50);
+            this.bnpalabra.Size = new System.Drawing.Size(113, 41);
             this.bnpalabra.TabIndex = 7;
             this.bnpalabra.Text = "Listo..";
             this.bnpalabra.UseVisualStyleBackColor = true;
@@ -81,15 +77,14 @@
             // 
             // Forminiciojuego
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ahorcado.Properties.Resources.damn;
-            this.ClientSize = new System.Drawing.Size(741, 516);
+            this.ClientSize = new System.Drawing.Size(736, 419);
             this.Controls.Add(this.bnpalabra);
             this.Controls.Add(this.tb1);
             this.Controls.Add(this.lb1);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Forminiciojuego";
             this.Text = "Forminiciojuego";
             this.Load += new System.EventHandler(this.Forminiciojuego_Load);

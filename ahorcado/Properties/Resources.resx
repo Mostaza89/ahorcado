@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="3b56ea8467e63d102d24420119178c23" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3b56ea8467e63d102d24420119178c23.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="damn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\damn.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -130,7 +133,22 @@
   <data name="cf93d1d7cfae0b2a30e5eb1739bfc64e" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cf93d1d7cfae0b2a30e5eb1739bfc64e.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="3b56ea8467e63d102d24420119178c23" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3b56ea8467e63d102d24420119178c23.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ahorcado_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ahorcado_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ahorcado_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ahorcado_11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ahorcado_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ahorcado_21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ahorcado_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ahorcado_31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ahorcado_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ahorcado_41.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ahorcado_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ahorcado_51.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

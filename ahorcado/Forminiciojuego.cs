@@ -15,11 +15,13 @@ namespace ahorcado
         public Forminiciojuego()
         {
             InitializeComponent();
-            lb1.BackColor = System.Drawing.Color.Black; 
-            lb1.ForeColor = System.Drawing.Color.White; 
 
-            tb1.BackColor = System.Drawing.Color.Black;  
-            tb1.ForeColor = System.Drawing.Color.White;  
+            lb1.BackColor = Color.Black;
+            lb1.ForeColor = Color.White;
+
+            tb1.BackColor = Color.Black;
+            tb1.ForeColor = Color.White;
+
         }
 
         private void Forminiciojuego_Load(object sender, EventArgs e)
@@ -41,15 +43,12 @@ namespace ahorcado
         {
             string palabraParaAdivinar = tb1.Text;
 
-            // Tu validación está perfecta
             if (string.IsNullOrWhiteSpace(palabraParaAdivinar))
             {
                 MessageBox.Show("Por favor, introduce una palabra");
                 return;
             }
 
-            // ----- AQUÍ ESTÁ LA CORRECCIÓN -----
-            // Pásale la variable "palabraParaAdivinar" al constructor
             Formahorcado formahorcado = new Formahorcado(palabraParaAdivinar);
 
             formahorcado.Show();

@@ -39,57 +39,70 @@
             // lblPalabra
             // 
             this.lblPalabra.AutoSize = true;
-            this.lblPalabra.Location = new System.Drawing.Point(254, 158);
+            this.lblPalabra.Font = new System.Drawing.Font("Blackadder ITC", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPalabra.Location = new System.Drawing.Point(77, 122);
+            this.lblPalabra.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPalabra.Name = "lblPalabra";
-            this.lblPalabra.Size = new System.Drawing.Size(44, 16);
+            this.lblPalabra.Size = new System.Drawing.Size(62, 34);
             this.lblPalabra.TabIndex = 0;
             this.lblPalabra.Text = "label1";
+            this.lblPalabra.Click += new System.EventHandler(this.lblPalabra_Click);
             // 
             // lblErrores
             // 
             this.lblErrores.AutoSize = true;
-            this.lblErrores.Location = new System.Drawing.Point(254, 193);
+            this.lblErrores.Font = new System.Drawing.Font("Blackadder ITC", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrores.Location = new System.Drawing.Point(77, 182);
+            this.lblErrores.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblErrores.Name = "lblErrores";
-            this.lblErrores.Size = new System.Drawing.Size(44, 16);
+            this.lblErrores.Size = new System.Drawing.Size(62, 34);
             this.lblErrores.TabIndex = 1;
             this.lblErrores.Text = "label1";
+            this.lblErrores.Click += new System.EventHandler(this.lblErrores_Click);
             // 
             // lblIntentos
             // 
             this.lblIntentos.AutoSize = true;
-            this.lblIntentos.Location = new System.Drawing.Point(254, 235);
+            this.lblIntentos.Font = new System.Drawing.Font("Blackadder ITC", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIntentos.Location = new System.Drawing.Point(75, 245);
+            this.lblIntentos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblIntentos.Name = "lblIntentos";
-            this.lblIntentos.Size = new System.Drawing.Size(44, 16);
+            this.lblIntentos.Size = new System.Drawing.Size(64, 34);
             this.lblIntentos.TabIndex = 2;
             this.lblIntentos.Text = "label2";
+            this.lblIntentos.Click += new System.EventHandler(this.lblIntentos_Click);
             // 
             // pbAhorcado
             // 
-            this.pbAhorcado.Location = new System.Drawing.Point(257, 12);
+            this.pbAhorcado.Location = new System.Drawing.Point(332, 166);
+            this.pbAhorcado.Margin = new System.Windows.Forms.Padding(2);
             this.pbAhorcado.Name = "pbAhorcado";
-            this.pbAhorcado.Size = new System.Drawing.Size(100, 50);
+            this.pbAhorcado.Size = new System.Drawing.Size(173, 159);
+            this.pbAhorcado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbAhorcado.TabIndex = 3;
             this.pbAhorcado.TabStop = false;
+            this.pbAhorcado.Click += new System.EventHandler(this.pbAhorcado_Click);
             // 
             // flpBotones
             // 
-            this.flpBotones.Location = new System.Drawing.Point(12, 266);
+            this.flpBotones.Location = new System.Drawing.Point(11, 372);
+            this.flpBotones.Margin = new System.Windows.Forms.Padding(2);
             this.flpBotones.Name = "flpBotones";
-            this.flpBotones.Size = new System.Drawing.Size(608, 194);
+            this.flpBotones.Size = new System.Drawing.Size(639, 89);
             this.flpBotones.TabIndex = 4;
+            this.flpBotones.Paint += new System.Windows.Forms.PaintEventHandler(this.flpBotones_Paint);
             // 
             // Formahorcado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ahorcado.Properties.Resources._3b56ea8467e63d102d24420119178c23;
-            this.ClientSize = new System.Drawing.Size(632, 472);
+            this.ClientSize = new System.Drawing.Size(661, 473);
             this.Controls.Add(this.flpBotones);
             this.Controls.Add(this.pbAhorcado);
             this.Controls.Add(this.lblIntentos);
             this.Controls.Add(this.lblErrores);
             this.Controls.Add(this.lblPalabra);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Formahorcado";
             this.Text = "Formahorcado";
             this.Load += new System.EventHandler(this.Formahorcado_Load);

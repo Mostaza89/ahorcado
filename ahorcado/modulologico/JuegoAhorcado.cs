@@ -6,23 +6,12 @@ using System.Threading.Tasks;
 
 namespace ahorcado
 {
-    public class JuegoAhorcado
+    public class JuegoAhorcado: modulologico.BaseJuego
     {
-        // Propiedades públicas para que el formulario las lea
-        public string PalabraSecreta { get; private set; }
-        public char[] PalabraMostrada { get; private set; }
-        public int IntentosRestantes { get; private set; }
-        public List<char> LetrasIncorrectas { get; private set; }
-
-        // Enum para saber el estado del juego
-        public enum EstadoJuego { Jugando, Ganado, Perdido }
-        public EstadoJuego Estado { get; private set; }
-
-        // Constructor: Se llama al iniciar el juego
         public JuegoAhorcado(string palabra)
         {
             PalabraSecreta = palabra.ToUpper(); // Guardar en mayúsculas
-            IntentosRestantes = 6; // O los intentos que quieras
+            IntentosRestantes = 5; // Configurado a 5 intentos
             LetrasIncorrectas = new List<char>();
             Estado = EstadoJuego.Jugando;
 
@@ -34,18 +23,18 @@ namespace ahorcado
             }
         }
 
-        // Método principal para adivinar una letra
-        public bool AdivinarLetra(char letra)
+        // Implementación del método virtual de la clase base usando 'override'
+        public override bool AdivinarLetra(char letra)
         {
             letra = char.ToUpper(letra);
 
-            // No hacer nada si el juego terminó o la letra ya se usó
+            // Usa las propiedades heredadas
             if (Estado != EstadoJuego.Jugando || LetrasIncorrectas.Contains(letra) || PalabraMostrada.Contains(letra))
             {
                 return false;
             }
 
-            // Comprobar si la letra está en la palabra secreta
+            // Comprobar si la letra está en la palabra secreta (propiedad heredada)
             if (PalabraSecreta.Contains(letra))
             {
                 // Acierto: Revelar la letra en la palabra mostrada
@@ -77,12 +66,6 @@ namespace ahorcado
                 }
                 return false; // Fue un error
             }
-        }
-
-        // Método para obtener la palabra formateada para el Label (ej: C _ S A)
-        public string GetPalabraParaMostrar()
-        {
-            return string.Join(" ", PalabraMostrada);
         }
     }
 }

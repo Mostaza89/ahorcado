@@ -12,95 +12,102 @@ namespace ahorcado
 {
     public partial class Formahorcado : Form
     {
-        // Instancia de la clase de lógica del juego
         private JuegoAhorcado miJuego;
 
-        // ***** PASO 1: Modificar el constructor *****
-        // Borra el constructor vacío que tenías y pon este:
         public Formahorcado(string palabra)
         {
             InitializeComponent();
 
-            // Crear la instancia del juego con la palabra recibida
             miJuego = new JuegoAhorcado(palabra);
+
+            pbAhorcado.BackColor = Color.Transparent;  
+            flpBotones.BackColor = Color.Transparent;
+
+            lblPalabra.BackColor = Color.Transparent;
+            lblPalabra.ForeColor = Color.White;
+
+            lblErrores.BackColor = Color.Transparent;
+            lblErrores.ForeColor = Color.White;
+
+            lblIntentos.BackColor = Color.Transparent;
+            lblIntentos.ForeColor = Color.White;
         }
 
-        // ***** PASO 2: Llenar el evento Load *****
         private void Formahorcado_Load(object sender, EventArgs e)
         {
-            // Iniciar la interfaz gráfica
             GenerarTeclado();
             ActualizarUI();
         }
 
-        // Método para crear los botones de la A a la Z
         private void GenerarTeclado()
         {
-            // El FlowLayoutPanel (flpBotones) los acomodará automáticamente
             for (char c = 'A'; c <= 'Z'; c++)
             {
                 Button btnLetra = new Button();
                 btnLetra.Text = c.ToString();
-                btnLetra.Tag = c; // Guardamos la letra en el Tag
+                btnLetra.Tag = c;
                 btnLetra.Width = 40;
                 btnLetra.Height = 40;
                 btnLetra.Font = new Font("Arial", 12, FontStyle.Bold);
-                btnLetra.Click += Letra_Click; // Asignar el mismo evento a todos
+                btnLetra.Click += Letra_Click;
 
                 flpBotones.Controls.Add(btnLetra);
             }
         }
 
-        // ***** PASO 3: Crear el evento Click para las letras *****
         private void Letra_Click(object sender, EventArgs e)
         {
-            // Obtener el botón que se presionó
             Button btn = (Button)sender;
-
-            // Obtener la letra del Tag
             char letra = (char)btn.Tag;
-
-            // Deshabilitar el botón para que no se use de nuevo
             btn.Enabled = false;
 
-            // Llamar a la lógica del juego
             miJuego.AdivinarLetra(letra);
-
-            // Actualizar toda la pantalla
             ActualizarUI();
         }
 
-        // Método para refrescar toda la pantalla
         private void ActualizarUI()
         {
-            // 1. Mostrar la palabra con guiones (ej: H O _ A)
             lblPalabra.Text = miJuego.GetPalabraParaMostrar();
 
-            // 2. Mostrar letras incorrectas
             lblErrores.Text = "Erróneas: " + string.Join(", ", miJuego.LetrasIncorrectas);
 
-            // 3. Mostrar intentos
             lblIntentos.Text = $"Intentos restantes: {miJuego.IntentosRestantes}";
+ 
+            int imagenNum = 5 - miJuego.IntentosRestantes;
 
-            // 4. (Opcional) Actualizar la imagen del ahorcado
-            //    Necesitarías tener imágenes en tus Recursos (ej: img_0, img_1...)
-            //    int imagenNum = 6 - miJuego.IntentosRestantes;
-            //    pbAhorcado.Image = (Image)Properties.Resources.ResourceManager.GetObject($"img_{imagenNum}");
+            try
+            {
+                if (miJuego.Estado != JuegoAhorcado.EstadoJuego.Ganado)
+                {
+                    pbAhorcado.Image = (Image)Properties.Resources.ResourceManager.GetObject($"ahorcado_{imagenNum}");
+                    pbAhorcado.SizeMode = PictureBoxSizeMode.Zoom;
+                }
+            }
+            catch (Exception)
+            {
 
-            // 5. Comprobar si el juego terminó
+            }
+
             if (miJuego.Estado == JuegoAhorcado.EstadoJuego.Ganado)
             {
-                MessageBox.Show("¡GANASTE!", "Felicidades");
                 DeshabilitarTeclado();
+                MessageBox.Show("¡GANASTE!", "Felicidades");
+
+                Form1 inicioForm = new Form1();
+                inicioForm.Show();
+                this.Close(); 
             }
             else if (miJuego.Estado == JuegoAhorcado.EstadoJuego.Perdido)
             {
-                MessageBox.Show($"¡PERDISTE! La palabra era: {miJuego.PalabraSecreta}", "Suerte la próxima");
                 DeshabilitarTeclado();
+                MessageBox.Show($"¡PERDISTE! La palabra era: {miJuego.PalabraSecreta}", "Suerte la próxima");
+
+                Form1 inicioForm = new Form1();
+                inicioForm.Show();
+                this.Close();
             }
         }
 
-        // Método para deshabilitar todos los botones al terminar
         private void DeshabilitarTeclado()
         {
             foreach (Control c in flpBotones.Controls)
@@ -110,6 +117,31 @@ namespace ahorcado
                     c.Enabled = false;
                 }
             }
+        }
+
+        private void pbAhorcado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flpBotones_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblPalabra_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblErrores_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblIntentos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

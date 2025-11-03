@@ -64,6 +64,7 @@
     <Compile Include="Forminiciojuego.Designer.cs">
       <DependentUpon>Forminiciojuego.cs</DependentUpon>
     </Compile>
+    <Compile Include="modulologico\BaseJuego.cs" />
     <Compile Include="modulologico\JuegoAhorcado.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,6 +114,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\3b56ea8467e63d102d24420119178c23.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ahorcado_0.png" />
+    <None Include="Resources\ahorcado_51.png" />
+    <None Include="Resources\ahorcado_41.png" />
+    <None Include="Resources\ahorcado_31.png" />
+    <None Include="Resources\ahorcado_21.png" />
+    <None Include="Resources\ahorcado_11.png" />
+    <None Include="Resources\ahorcado_01.png" />
+    <Content Include="Resources\ahorcado_1.png" />
+    <Content Include="Resources\ahorcado_2.png" />
+    <Content Include="Resources\ahorcado_3.png" />
+    <Content Include="Resources\ahorcado_4.png" />
+    <Content Include="Resources\ahorcado_5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
