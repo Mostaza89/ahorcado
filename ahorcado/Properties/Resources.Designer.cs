@@ -133,6 +133,16 @@ namespace ahorcado.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap b58c42d5930fcec1934dfd38674d3a5e {
+            get {
+                object obj = ResourceManager.GetObject("b58c42d5930fcec1934dfd38674d3a5e", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cf93d1d7cfae0b2a30e5eb1739bfc64e {
             get {
                 object obj = ResourceManager.GetObject("cf93d1d7cfae0b2a30e5eb1739bfc64e", resourceCulture);
@@ -166,6 +176,56 @@ namespace ahorcado.Properties {
         internal static System.Drawing.Bitmap nueva {
             get {
                 object obj = ResourceManager.GetObject("nueva", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vidas_1 {
+            get {
+                object obj = ResourceManager.GetObject("vidas_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vidas_2 {
+            get {
+                object obj = ResourceManager.GetObject("vidas_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vidas_3 {
+            get {
+                object obj = ResourceManager.GetObject("vidas_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vidas_4 {
+            get {
+                object obj = ResourceManager.GetObject("vidas_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vidas_5 {
+            get {
+                object obj = ResourceManager.GetObject("vidas_5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

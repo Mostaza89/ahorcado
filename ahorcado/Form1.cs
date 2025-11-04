@@ -45,5 +45,12 @@ namespace ahorcado
         {
 
         }
+
+        private void bnhistorial_Click(object sender, EventArgs e)
+        {
+            Formhistorial formhistorial = new Formhistorial();
+            formhistorial.Show();
+            this.Hide();
+        }
     }
 }

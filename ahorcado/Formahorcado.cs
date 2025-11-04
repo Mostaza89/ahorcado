@@ -1,18 +1,24 @@
-﻿using System;
+﻿using ahorcado.modulologico; 
+using ahorcado.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ahorcado.modulologico; 
+using ahorcado.Services;
 
 namespace ahorcado
 {
     public partial class Formahorcado : Form
     {
         private JuegoAhorcado miJuego;
+        private Stopwatch stopwatch;
 
         public Formahorcado(string palabra)
         {
@@ -20,8 +26,12 @@ namespace ahorcado
 
             miJuego = new JuegoAhorcado(palabra);
 
-            pbAhorcado.BackColor = Color.Transparent;  
+            pbAhorcado.BackColor = Color.Transparent;
             flpBotones.BackColor = Color.Transparent;
+
+            // FIX: Asegurar que el PictureBox de vidas exista y sea transparente
+            if (pbVidas != null)
+                pbVidas.BackColor = Color.Transparent;
 
             lblPalabra.BackColor = Color.Transparent;
             lblPalabra.ForeColor = Color.White;
@@ -29,8 +39,10 @@ namespace ahorcado
             lblErrores.BackColor = Color.Transparent;
             lblErrores.ForeColor = Color.White;
 
-            lblIntentos.BackColor = Color.Transparent;
-            lblIntentos.ForeColor = Color.White;
+            stopwatch = new Stopwatch();
+            stopwatch.Start();
+
+
         }
 
         private void Formahorcado_Load(object sender, EventArgs e)
@@ -68,16 +80,27 @@ namespace ahorcado
         private void ActualizarUI()
         {
             lblPalabra.Text = miJuego.GetPalabraParaMostrar();
-
             lblErrores.Text = "Erróneas: " + string.Join(", ", miJuego.LetrasIncorrectas);
 
-            lblIntentos.Text = $"Intentos restantes: {miJuego.IntentosRestantes}";
- 
+            // FIX: Lógica de actualización de pbVidas (DESCOMENTADA)
+            int vidasRestantes = miJuego.IntentosRestantes;
+            string recursoVida = $"vidas_{vidasRestantes}";
+
+            try
+            {
+                pbVidas.Image = (Image)Properties.Resources.ResourceManager.GetObject(recursoVida);
+                pbVidas.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+            catch (Exception)
+            {
+                // Asegúrate de que las imágenes vidas_0.png a vidas_5.png existan en Resources.
+            }
+
             int imagenNum = 5 - miJuego.IntentosRestantes;
 
             try
             {
-                if (miJuego.Estado != JuegoAhorcado.EstadoJuego.Ganado)
+                if (miJuego.Estado != BaseJuego.EstadoJuego.Ganado)
                 {
                     pbAhorcado.Image = (Image)Properties.Resources.ResourceManager.GetObject($"ahorcado_{imagenNum}");
                     pbAhorcado.SizeMode = PictureBoxSizeMode.Zoom;
@@ -88,19 +111,46 @@ namespace ahorcado
 
             }
 
-            if (miJuego.Estado == JuegoAhorcado.EstadoJuego.Ganado)
+            // Lógica de fin de juego y guardado de historial
+            if (miJuego.Estado == BaseJuego.EstadoJuego.Ganado)
             {
+                stopwatch.Stop();
+
+                var partida = new PartidaHistorial
+                {
+                    Palabra = miJuego.PalabraSecreta,
+                    Tiempo = stopwatch.Elapsed,
+                    Ganado = true,
+                    IntentosFallidos = miJuego.LetrasIncorrectas.Count,
+                    Fecha = DateTime.Now
+                };
+
+                GlobalHistorial.Instance.AñadirPartida(partida);
+
                 DeshabilitarTeclado();
-                MessageBox.Show("¡GANASTE!", "Felicidades");
+                MessageBox.Show($"¡GANASTE! Tiempo: {partida.TiempoFormateado}", "Felicidades");
 
                 Form1 inicioForm = new Form1();
                 inicioForm.Show();
-                this.Close(); 
+                this.Close();
             }
-            else if (miJuego.Estado == JuegoAhorcado.EstadoJuego.Perdido)
+            else if (miJuego.Estado == BaseJuego.EstadoJuego.Perdido)
             {
+                stopwatch.Stop();
+
+                var partida = new PartidaHistorial
+                {
+                    Palabra = miJuego.PalabraSecreta,
+                    Tiempo = stopwatch.Elapsed,
+                    Ganado = false,
+                    IntentosFallidos = miJuego.LetrasIncorrectas.Count,
+                    Fecha = DateTime.Now
+                };
+
+                GlobalHistorial.Instance.AñadirPartida(partida);
+
                 DeshabilitarTeclado();
-                MessageBox.Show($"¡PERDISTE! La palabra era: {miJuego.PalabraSecreta}", "Suerte la próxima");
+                MessageBox.Show($"¡PERDISTE! La palabra era: {miJuego.PalabraSecreta}. Tiempo: {partida.TiempoFormateado}", "Suerte la próxima");
 
                 Form1 inicioForm = new Form1();
                 inicioForm.Show();
@@ -140,6 +190,11 @@ namespace ahorcado
         }
 
         private void lblIntentos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbVidas_Click(object sender, EventArgs e)
         {
 
         }
