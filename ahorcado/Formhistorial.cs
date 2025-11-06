@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ahorcado.Services; // Necesario para GlobalHistorial
+using ahorcado.Services;        
 using ahorcado.modulologico;
 
 namespace ahorcado
@@ -17,17 +17,47 @@ namespace ahorcado
         public Formhistorial()
         {
             InitializeComponent();
+
+
         }
 
         private void Formhistorial_Load(object sender, EventArgs e)
         {
+            dgvHistorial.Parent = pictureBox1;
+            dgvHistorial.BorderStyle = BorderStyle.None;
+            dgvHistorial.BackgroundColor = Color.Black; 
+
+            dgvHistorial.EnableHeadersVisualStyles = false;
+            dgvHistorial.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvHistorial.RowHeadersVisible = false;
+
+            dgvHistorial.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 45, 48);
+            dgvHistorial.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvHistorial.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgvHistorial.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            dgvHistorial.DefaultCellStyle.BackColor = Color.FromArgb(30, 30, 30);
+            dgvHistorial.DefaultCellStyle.ForeColor = Color.White;
+            dgvHistorial.DefaultCellStyle.SelectionBackColor = Color.FromArgb(70, 130, 180); // azul acero
+            dgvHistorial.DefaultCellStyle.SelectionForeColor = Color.White;
+            dgvHistorial.DefaultCellStyle.Font = new Font("Segoe UI", 9);
+
+            dgvHistorial.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvHistorial.GridColor = Color.FromArgb(64, 64, 64); // gris tenue
+
+            dgvHistorial.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvHistorial.AllowUserToResizeRows = false;
+            dgvHistorial.AllowUserToResizeColumns = false;
+            dgvHistorial.ReadOnly = true;
+            dgvHistorial.RowTemplate.Height = 30;
+
+            dgvHistorial.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(40, 40, 40);
             CargarHistorialEnTabla();
         }
 
         private void CargarHistorialEnTabla()
         {
             var historial = GlobalHistorial.Instance.GetHistorial();
-
             dgvHistorial.DataSource = historial;
 
             if (dgvHistorial.Columns.Contains("PalabraSecreta"))
@@ -42,17 +72,11 @@ namespace ahorcado
             if (dgvHistorial.Columns.Contains("TiempoFormateado"))
                 dgvHistorial.Columns["TiempoFormateado"].HeaderText = "Tiempo (mm:ss)";
 
-            // FIX DEL CHECKBOX (CS0051): Ocultamos la propiedad booleana 'Ganado'
-            if (dgvHistorial.Columns.Contains("Ganado"))
-                dgvHistorial.Columns["Ganado"].Visible = false;
-
-            // Ocultamos las otras propiedades crudas
-            if (dgvHistorial.Columns.Contains("Tiempo"))
-                dgvHistorial.Columns["Tiempo"].Visible = false;
-            if (dgvHistorial.Columns.Contains("Palabra"))
-                dgvHistorial.Columns["Palabra"].Visible = false;
-            if (dgvHistorial.Columns.Contains("Fecha"))
-                dgvHistorial.Columns["Fecha"].Visible = false; // Puedes decidir si mostrar o no la fecha
+            // Ocultar columnas innecesarias
+            string[] ocultar = { "Ganado", "Tiempo", "Palabra", "Fecha" };
+            foreach (var col in ocultar)
+                if (dgvHistorial.Columns.Contains(col))
+                    dgvHistorial.Columns[col].Visible = false;
 
             dgvHistorial.AutoResizeColumns();
         }
@@ -62,6 +86,16 @@ namespace ahorcado
             Form1 formPrincipal = new Form1();
             formPrincipal.Show();
             this.Close();
+        }
+
+        private void dgvHistorial_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

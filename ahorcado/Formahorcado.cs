@@ -10,8 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ahorcado.modulologico; 
-using ahorcado.Services;
 
 namespace ahorcado
 {
@@ -29,7 +27,6 @@ namespace ahorcado
             pbAhorcado.BackColor = Color.Transparent;
             flpBotones.BackColor = Color.Transparent;
 
-            // FIX: Asegurar que el PictureBox de vidas exista y sea transparente
             if (pbVidas != null)
                 pbVidas.BackColor = Color.Transparent;
 
@@ -82,7 +79,6 @@ namespace ahorcado
             lblPalabra.Text = miJuego.GetPalabraParaMostrar();
             lblErrores.Text = "Erróneas: " + string.Join(", ", miJuego.LetrasIncorrectas);
 
-            // FIX: Lógica de actualización de pbVidas (DESCOMENTADA)
             int vidasRestantes = miJuego.IntentosRestantes;
             string recursoVida = $"vidas_{vidasRestantes}";
 
@@ -93,7 +89,7 @@ namespace ahorcado
             }
             catch (Exception)
             {
-                // Asegúrate de que las imágenes vidas_0.png a vidas_5.png existan en Resources.
+               
             }
 
             int imagenNum = 5 - miJuego.IntentosRestantes;
@@ -111,7 +107,6 @@ namespace ahorcado
 
             }
 
-            // Lógica de fin de juego y guardado de historial
             if (miJuego.Estado == BaseJuego.EstadoJuego.Ganado)
             {
                 stopwatch.Stop();

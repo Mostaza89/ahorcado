@@ -19,7 +19,6 @@ namespace ahorcado.modulologico
             get { return Palabra; }
         }
 
-        // CORREGIDO: Usamos esta propiedad string para mostrar el resultado en la tabla.
         public string Resultado
         {
             get { return Ganado ? "Ganó" : "Perdió"; }

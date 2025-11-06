@@ -128,6 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\ahorcado_0.png" />
+    <None Include="Resources\fb02ed422f7aba18e0a399f1087803c3.gif" />
     <None Include="Resources\b58c42d5930fcec1934dfd38674d3a5e.gif" />
     <None Include="Resources\vidas_5.png" />
     <None Include="Resources\vidas_4.png" />
